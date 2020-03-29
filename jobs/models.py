@@ -9,3 +9,6 @@ class Jobs(models.Model):
     image =models.ImageField(upload_to='images/')
     Summary=models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.Summary
+

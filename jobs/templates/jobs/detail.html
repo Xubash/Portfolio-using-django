@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 {% load static %}
@@ -50,41 +52,15 @@
 
   <section class="jumbotron text-center">
     <div class="container">
-      <h1>Subash Manandhar</h1>
-      <p class="lead text-muted">Hi, I am Subash. I enjoy playing Football and travelling. I work in Cotivit Nepal and love to make websites.</p>
+      <h1>Job Detail</h1>
+      <p class="lead text-muted">{{job.Summary}}</p>
+      <img src="{{ job.image.url }}" height=300></img>
       <p>
-        <a href="mailto:xubashm@gmail.com" class="btn btn-primary my-2">Email me</a>
+        <a href="{% url 'home' %}" class="btn btn-primary my-2">Back</a>
         
       </p>
-      <img src="{% static 'subash.jpeg' %}" height=300></img>
     </div>
   </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row">
-        {% for job in jobs.all %}
-       
-        <div class="col-md-4">
-            <a href="{% url 'detail' job.id %}">
-          <div class="card mb-4 shadow-sm">
-           <img class ="card-img-body" src="{{job.image.url}}" height =300 > </img>
-            <div class="card-body">
-              <p class="card-text"> {{job.Summary}}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                
-              </div>
-            </div>
-          </div>
-        </a>
-        </div>
-        {% endfor%}
-      </div>
-
-    </div>
-  </div>
-
 </main>
 
 <script src="{% static 'jquery-3.4.1.min.js' %}}" ></script>
